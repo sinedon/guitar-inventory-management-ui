@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Inventory Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b6ad56;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #b6ad56;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column; 
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff; 
+        }
+        .links {
+            display: flex;
+            justify-content: flex-end; 
+            gap: 10px; 
+        }
+        .link a {
+            text-decoration: none;
+            color: #333333;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #333333;
+            border-radius: 5px;
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        .link a:hover {
+            background-color: #333333;
+            color: #ffffff;
+        }
+        .image-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .image-container img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Guitar Inventory Management</h1>
+        <div class="links">
+            <div class="link">
+                <a href="about.html">About</a>
+            </div>  
+            <div class="link">
+                <a href="add.html">Add</a>
+            </div>
+            <div class="link">
+                <a href="search.html">Search</a>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="guitarist.jpg" alt="Guy playing guitar">
+        </div>
+    </div>
+</body>
+</html>
+
