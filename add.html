@@ -65,6 +65,11 @@
             let backWood = document.getElementById("backWood").value;
             let topWood = document.getElementById("topWood").value;
 
+            if (!serialNumber || !price || !builder || !model || !type || !backWood || !topWood) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
             let guitarData = {
                 "Serial Number": serialNumber,
                 "Price": price,
@@ -77,6 +82,29 @@
 
             let jsonData = JSON.stringify(guitarData, null, 2);
             alert(jsonData);
+
+            fetch('http://localhost:8000', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(guitarData),
+            })
+
+            .then(response => {
+                if (response.ok) {
+                    // Display success message
+                    alert("The guitar was added to the system.");
+                } else {
+                    // Display error message
+                    alert("Something went wrong. Please try again or contact the customer support team.");
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Display error message
+                alert("Something went wrong. Please try again or contact the customer support team.");
+            });
         }
     </script>
 </body>
