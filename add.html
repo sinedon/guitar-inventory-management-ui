@@ -83,7 +83,7 @@
             let jsonData = JSON.stringify(guitarData, null, 2);
             alert(jsonData);
 
-            fetch('http://localhost:8000', {
+            fetch('https://guitar-services-latest.onrender.com/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
