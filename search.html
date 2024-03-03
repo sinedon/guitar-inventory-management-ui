@@ -78,7 +78,7 @@
             let queryString = `?builder=${builder}&model=${model}&type=${type}&backWood=${backWood}&topWood=${topWood}`;
 
             // Fetch data from backend API
-            fetch('https://guitar-services-latest.onrender.com/' + queryString)
+            fetch('https://guitar-services-latest.onrender.com/guitars/search' + queryString)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
