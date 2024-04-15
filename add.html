@@ -54,7 +54,7 @@
         </div>
         <button onclick="addGuitar()">Add The Guitar</button>
     </div>
-
+    <script src="configuration.js"></script>
     <script>
         function addGuitar() {
             let serialNumber = document.getElementById("serialNumber").value;
@@ -83,10 +83,15 @@
             let jsonData = JSON.stringify(guitarData, null, 2);
             alert(jsonData);
 
-            fetch('https://guitar-services-latest.onrender.com/guitars/add', {
+            const host = getHost();
+            const addEndpoint = '/guitars/add';
+            const url = host + addEndpoint;
+
+            fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + $(configuration.token())
                 },
                 body: JSON.stringify(guitarData),
             })

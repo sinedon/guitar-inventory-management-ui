@@ -65,8 +65,10 @@
         </thead>
         <tbody id="searchResult"></tbody>
     </table>
-
+    <script src="configuration.js"></script>
     <script>
+        const host = getHost();
+        const searchEndpoint = '/guitars/search';
         function searchGuitar() {
             let builder = document.getElementById("builder").value.toLowerCase();
             let model = document.getElementById("model").value.toLowerCase();
@@ -78,7 +80,7 @@
             let queryString = `?builder=${builder}&model=${model}&type=${type}&backWood=${backWood}&topWood=${topWood}`;
 
             // Fetch data from backend API
-            fetch('https://guitar-services-latest.onrender.com/guitars/search' + queryString)
+            fetch(host + searchEndpoint + queryString)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
