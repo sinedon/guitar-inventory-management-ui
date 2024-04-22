@@ -80,7 +80,12 @@
             let queryString = `?builder=${builder}&model=${model}&type=${type}&backWood=${backWood}&topWood=${topWood}`;
 
             // Fetch data from backend API
-            fetch(host + searchEndpoint + queryString)
+            fetch(host + searchEndpoint + queryString, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${configuration.token()}`
+                }
+            })
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
