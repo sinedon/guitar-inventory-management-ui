@@ -1,7 +1,7 @@
 const mode = 1;
 
 const host_local = "http://localhost:8080";
-const host_remote = "https://guitar-services-latest.onrender.com";
+const host_remote = "https://guitar-serviceshw9-latest.onrender.com";
 
 function getHost() {
     return (mode === 0) ? host_local : host_remote;
